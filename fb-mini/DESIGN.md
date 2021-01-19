@@ -6,7 +6,8 @@ Table of all the users. For each user, stores...
     User ID- string
     First name- string
     Last name- string
-    Date of birth- date
+    Birthday- date
+    Email- string
     Password- string
     Bio- string
 }
@@ -14,6 +15,7 @@ Table of all the users. For each user, stores...
 Posts:
 Table of all the posts. For each post, stores...
 {
+    ID- string
     User ID of poster- string, relates to the user table via the ID
     Text- string
     Date posted- date
@@ -23,8 +25,9 @@ Table of all the posts. For each post, stores...
 Friends:
 Table of friendships. For each friendship, stores...
 {
-    User ID of requestor- string, relates to the user table via the ID
-    User ID of requested- string, relates to the user table via the ID
+    ID- string
+    User ID of requester- string, relates to the user table via the ID
+    User ID of requestee- string, relates to the user table via the ID
     Date requested- date
     Status (accepted/declined/requested)- enum
 }
