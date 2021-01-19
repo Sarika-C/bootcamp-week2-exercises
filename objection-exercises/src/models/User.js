@@ -6,7 +6,16 @@ class User extends BaseModel {
   }
 
   static get relationMappings() {
-    return {}
+    return {
+      pets: {
+        relation: HasManyRelation,
+        modelClass: Pet,
+        join: {
+          from: 'users.id',
+          to: 'pets.ownerId',
+        },
+      },
+    }
   }
 }
 
