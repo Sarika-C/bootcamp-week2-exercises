@@ -1,3 +1,4 @@
+const ManyToManyRelation = require('./BaseModel')
 const BaseModel = require('./BaseModel')
 
 class Relation extends BaseModel {
@@ -6,6 +7,7 @@ class Relation extends BaseModel {
   }
 
   static get relationMappings() {
+    const User = require('./User')
     return {
       relations: {
         relation: ManyToManyRelation,

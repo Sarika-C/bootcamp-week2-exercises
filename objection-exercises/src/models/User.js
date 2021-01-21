@@ -1,3 +1,4 @@
+const HasManyRelation = require('./BaseModel')
 const BaseModel = require('./BaseModel')
 
 class User extends BaseModel {
@@ -6,6 +7,7 @@ class User extends BaseModel {
   }
 
   static get relationMappings() {
+    const Pet = require('./Pet')
     return {
       pets: {
         relation: HasManyRelation,

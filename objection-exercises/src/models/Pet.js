@@ -1,3 +1,4 @@
+const BelongsToOneRelation = require('./BaseModel')
 const BaseModel = require('./BaseModel')
 
 class Pet extends BaseModel {
@@ -6,6 +7,7 @@ class Pet extends BaseModel {
   }
 
   static get relationMappings() {
+    const User = require('./User')
     return {
       pets: {
         relation: BelongsToOneRelation,
