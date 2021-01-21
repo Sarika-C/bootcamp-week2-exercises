@@ -9,7 +9,7 @@ class Relation extends BaseModel {
   static get relationMappings() {
     const User = require('./User')
     return {
-      relations: {
+      children: {
         relation: ManyToManyRelation,
         modelClass: User,
         join: {
@@ -20,6 +20,18 @@ class Relation extends BaseModel {
           },
           to: 'users.id',
         },
+      },
+
+      parents: {
+        relation: ManyToManyRelation,
+        modelClass: User,
+        join: {
+          from: 'users.id',
+          through: {
+            from: 'relations.childId',
+            to: 'relations.parentId'
+          },
+          to: 'users.id',
       },
     }
   }
